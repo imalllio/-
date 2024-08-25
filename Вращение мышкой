@@ -1,0 +1,6 @@
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			dragging = event.pressed
+	if event is InputEventMouseMotion and dragging:
+		mesh_instance_3d.rotate_x((deg_to_rad(event.relative.y * rotation_speed)))
+		mesh_instance_3d.rotate_y((deg_to_rad(event.relative.x * rotation_speed)))
